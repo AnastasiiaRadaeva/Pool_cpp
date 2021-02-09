@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 11:15:14 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/02/08 15:00:01 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/02/09 17:56:08 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
 
 class Contact
 {
@@ -25,7 +26,8 @@ class Contact
 		~Contact();
 
 		void	fill_contact(void);
-		void	write_contact_to_table(void);
+		void	write_contact_to_table(int index);
+		void	write_contact_info(void);
 
 	private:
 	

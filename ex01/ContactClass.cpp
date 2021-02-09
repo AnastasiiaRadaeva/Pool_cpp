@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 11:15:14 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/02/08 15:02:34 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/02/09 17:59:42 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,46 @@ void    Contact::fill_contact(void)
     int index;
 
     index = -1;
-    std::cout << std::endl;
     while (++index < 11)
     {
-        // решить , что делать, если вводят несколько слов
-        std::cout << this->info_out[index];
-        std::cin >> this->contact_info[index];
+        // решить , что делать, если вводят несколько слов | нужно использовать clear после cin
+        std::cout << info_out[index];
+        std::cin >> contact_info[index];
     }
-    std::cout << std::endl << "The contact created." << std::endl;
+    std::cout << std::endl << "The contact created.\n\n";
 }
 
-void    Contact::write_contact_to_table(void)
+void    Contact::write_contact_to_table(int index)
 {
-    // написать 4 столбика по 10 символов
+    std::string table_str;
+
+    std::cout << "|";
+    std::cout << std::setw(10);
+    std::cout << index;
+    std::cout << "|";
+    for (int i = 0; i < 3; i++)
+    {
+        table_str = contact_info[i];
+        if (contact_info[i].size() > 8)
+        {
+            table_str.erase(9, table_str.size() - 9);
+            table_str.push_back('.');
+        }        
+        std::cout << std::setw(10);
+        std::cout << table_str;
+        std::cout << "|";
+    }
+    std::cout << std::endl;
+}
+
+void    Contact::write_contact_info(void)
+{
+    for (int i = 0; i < 11; i++)
+    {
+        std::cout << std::setw(17);
+        std::cout << info_out[i];
+        std::cout << contact_info[i] << std::endl;
+    }
 }
 
 /*
