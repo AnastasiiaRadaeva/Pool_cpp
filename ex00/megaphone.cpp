@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp 	                                    :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbatwoma <kbatwoma@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:04:17 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/01/25 23:05:08 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/02/10 12:57:04 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ char	*ft_to_upper(char *str)
 
 	index = -1;
 	while (str[++index])
-	{
-		if (str[index] >= 'a' && str[index] <= 'z')
-		str[index] = str[index] - 32;
-	}
+		str[index] = toupper(str[index]);
 	return (str);
 }
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kbatwoma <kbatwoma@student.21-school.ru>   +#+  +:+       +#+         #
+#    By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/24 18:08:41 by kbatwoma          #+#    #+#              #
-#    Updated: 2021/01/25 19:41:42 by kbatwoma         ###   ########.fr        #
+#    Updated: 2021/02/10 12:57:27 by kbatwoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,4 +34,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re norm
+.PHONY: all clean fclean re
