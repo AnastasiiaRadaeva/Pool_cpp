@@ -6,15 +6,11 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 11:15:14 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/02/09 17:59:42 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/02/10 12:38:13 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ContactClass.hpp"
-
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
 
 Contact::Contact()
 {
@@ -31,11 +27,6 @@ Contact::Contact()
     this->info_out[10] = "Darkest secret: ";
 }
 
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
-
 Contact::~Contact()
 {
 }
@@ -44,7 +35,6 @@ Contact::~Contact()
 ** --------------------------------- METHODS ----------------------------------
 */
 
-
 void    Contact::fill_contact(void)
 {
     int index;
@@ -52,11 +42,13 @@ void    Contact::fill_contact(void)
     index = -1;
     while (++index < 11)
     {
-        // решить , что делать, если вводят несколько слов | нужно использовать clear после cin
         std::cout << info_out[index];
-        std::cin >> contact_info[index];
+        std::getline(std::cin, contact_info[index]);
     }
-    std::cout << std::endl << "The contact created.\n\n";
+    std::cout << "_________________________" << std::endl;
+    std::cout << "|                       |" << std::endl;
+    std::cout << "|The contact is created.|" << std::endl;
+    std::cout << "|_______________________|" << std::endl << std::endl;
 }
 
 void    Contact::write_contact_to_table(int index)
@@ -90,11 +82,5 @@ void    Contact::write_contact_info(void)
         std::cout << info_out[i];
         std::cout << contact_info[i] << std::endl;
     }
+    std::cout << std::endl;
 }
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */

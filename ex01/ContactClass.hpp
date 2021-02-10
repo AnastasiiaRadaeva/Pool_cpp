@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 11:15:14 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/02/09 17:56:08 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/02/10 13:22:52 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class Contact
 	
 		std::string	info_out[11];
 		std::string contact_info[11];
-
 };
 
 #endif

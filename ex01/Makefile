@@ -6,11 +6,9 @@
 #    By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 10:33:41 by kbatwoma          #+#    #+#              #
-#    Updated: 2021/02/08 14:23:21 by kbatwoma         ###   ########.fr        #
+#    Updated: 2021/02/10 13:21:43 by kbatwoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-# не пересобирает, если поменять что-то в хедере
 
 NAME 		= phonebook_80s
 CC 			= clang++
@@ -22,17 +20,20 @@ SRCS_LIST   =	phonebook_80s.cpp \
 				ContactClass.cpp
 SRCS		= $(addprefix $(SRCS_DIR), $(SRCS_LIST))
 OBJS		= $(patsubst %.cpp, %.o, $(SRCS))
+D_FILES		= $(patsubst %.cpp, %.d, $(SRCS))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(FLAGS) $^ -o $@ 
 
 %.o : %.cpp
-	$(CC) $(FLAGS) -I$(HEADER_DIR) -c $<
+	$(CC) $(FLAGS)  -MD -c $< -o $@ 
+	 
+-include $(D_FILES)
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(D_FILES)
 
 fclean: clean
 	rm -rf $(NAME)
