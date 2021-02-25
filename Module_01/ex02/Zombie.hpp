@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 12:17:41 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/02/25 17:29:48 by kbatwoma         ###   ########.fr       */
+/*   Created: 2021/02/25 17:02:53 by kbatwoma          #+#    #+#             */
+/*   Updated: 2021/02/25 17:32:33 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+ #ifndef ZOMBIE_HPP
+ # define ZOMBIE_HPP
 
-# include <iostream>
+ #include <iostream>
 
-class Pony
+class Zombie
 {
-    public:
-        
-        Pony(std::string name, int a, std::string b, std::string c);
-        ~Pony();
-        void pony_params(void);
+    public: 
+
+        Zombie();
+        ~Zombie();
 
     private:
-    
+
+        std::string _type;
         std::string _name;
-        int         _height;
-        std::string _color;
-        std::string _hat;
-    
+
+        void    announce();
+
 };
 
-#endif
+ #endif
