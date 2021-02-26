@@ -14,6 +14,7 @@
 # define ZOMBIE_EVENT_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include "Zombie.hpp"
 
 class ZombieEvent
@@ -22,15 +23,16 @@ class ZombieEvent
 
         ZombieEvent();
         ~ZombieEvent();
-
+        void    setZombieType();
+        Zombie* newZombie(std::string name);
+        Zombie  randomChump();
 
     private:
 
-        void    setZombieType();
-        Zombie* newZombie(std::string name);
-        Zombie* randomChump();
+        std::string _type_of_zombie_ar[5];
+        std::string _name_ar[10];
+        std::string _type_of_zombie;
 
 };
-
 
 #endif
