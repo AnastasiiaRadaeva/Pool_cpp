@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 11:00:29 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/01 11:10:47 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/01 12:12:02 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define BRAIN_HPP
 
 # include <iostream>
+# include <sstream>
 
 class Brain
 {
@@ -22,13 +23,14 @@ class Brain
 
         Brain();
         ~Brain();
-
+        
+        std::string identify() const;
 
     private:
 
-        int volume;
-        int weight;
-        std::string dgfdg;
+        int _volume;
+        int _weight;
+        std::string _cerebral_gyri; 
 
 };
 
