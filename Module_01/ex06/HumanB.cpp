@@ -6,16 +6,11 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 12:34:38 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/01 13:28:47 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/01 15:06:45 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-
-HumanB::HumanB()
-{
-
-}
 
 HumanB::HumanB(std::string name) : _name(name)
 {

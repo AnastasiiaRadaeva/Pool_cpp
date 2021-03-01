@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 12:34:33 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/01 13:28:00 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/01 15:06:53 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ class HumanB
         void    attack();
 
     private:
-
-        HumanB();
 
         std::string     _name;
         Weapon const    *_weapon;

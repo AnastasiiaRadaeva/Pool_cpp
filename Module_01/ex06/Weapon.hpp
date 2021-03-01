@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 12:30:43 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/01 13:18:55 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/01 15:06:28 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ class Weapon
 
 
     private:
-
-        Weapon();
 
         std::string type;
 
