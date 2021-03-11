@@ -6,11 +6,11 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:02:03 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/11 16:17:12 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:13:53 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fragtrap.hpp"
+#include "FragTrap.hpp"
 
 FragTrap::FragTrap() : _name("FragTrap"), _hit_points(100), _max_hit_points(100), _energy_points(100), _max_energy_points(100), _level(1), _melee_attack_damage(30), _ranged_attack_damage(20), _super_attack_damage(25), _armor_damage_reduction(5)
 {

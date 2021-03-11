@@ -6,11 +6,11 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:01:58 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/11 16:57:43 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:13:58 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fragtrap.hpp"
+#include "FragTrap.hpp"
 # include <thread> //for sleep_for
 # include <chrono> //for seconds
 
