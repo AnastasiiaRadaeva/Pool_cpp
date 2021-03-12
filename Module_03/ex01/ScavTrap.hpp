@@ -6,14 +6,16 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:08:17 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/12 12:00:20 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:08:02 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include <iostream> 
+# include <iostream>
+# define COL_AQUAMARINE "\033[0;36m"
+# define COL_END "\033[0m"
 
 class ScavTrap
 {

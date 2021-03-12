@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:01:51 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/11 17:02:32 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:21:00 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream> 
 # include <stdlib.h>
 # include <time.h> //for time
+# define COL_GREY "\033[2;37m"
+# define COL_END "\033[0m"
 
 class FragTrap
 {
