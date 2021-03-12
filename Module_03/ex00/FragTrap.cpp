@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:02:03 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/11 17:13:53 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/12 12:36:52 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,11 @@ int		FragTrap::meleeAttack(std::string const & target)
 
 void	FragTrap::takeDamage(unsigned int amount)
 {
+	int int_amount = static_cast<int>(amount);
 	std::cout << "| " << _name << " | Armor damage reduction: " << _armor_damage_reduction << std::endl;	
-	int copy_amount = amount;
-	amount = copy_amount < _armor_damage_reduction ? 0 : amount - _armor_damage_reduction;
-	_hit_points = ((_hit_points - amount) < 0) ? 0 : (_hit_points - amount);
-	std::cout << "< FR4G-TP " << _name << " took " << amount << " damage >" << std::endl;
+	int_amount = int_amount < _armor_damage_reduction ? 0 : int_amount - _armor_damage_reduction;
+	_hit_points = ((_hit_points - int_amount) < 0) ? 0 : (_hit_points - int_amount);
+	std::cout << "< FR4G-TP " << _name << " took " << int_amount << " damage >" << std::endl;
 	std::cout << "| " << _name << " | Hit points: " << _hit_points << std::endl;
 }
 

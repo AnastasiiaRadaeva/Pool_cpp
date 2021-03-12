@@ -6,12 +6,12 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:08:17 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/11 17:20:27 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/12 12:00:20 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream> 
 
@@ -30,7 +30,7 @@ class ScavTrap
 		int 	meleeAttack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		int 	challengeNewcomer(void);
+		void 	challengeNewcomer(void);
 
 		std::string	getName(void) const;
 
