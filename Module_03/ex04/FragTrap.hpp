@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:01:51 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/12 15:04:28 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:36:10 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <time.h> //for time
 # define COL_PURPLE "\033[0;35m"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
 
@@ -28,6 +28,9 @@ class FragTrap : public ClapTrap
 		~FragTrap();
 
 		FragTrap(std::string name);
+		
+		int		rangedAttack(std::string const & target);
+		int 	meleeAttack(std::string const & target);
 
 		int 	vaulthunter_dot_exe(std::string const & target);
 };

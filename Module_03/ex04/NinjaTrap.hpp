@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 15:18:35 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/12 16:05:19 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:35:44 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "ScavTrap.hpp"
 # define COL_BLUE "\033[0;34m"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
     public:
 
@@ -27,6 +27,10 @@ class NinjaTrap : public ClapTrap
         ~NinjaTrap();
 
         NinjaTrap(std::string name);
+
+
+		int	rangedAttack(std::string const & target);
+		int meleeAttack(std::string const & target);
 
         int ninjaShoebox(ClapTrap const &claptrap);
         int ninjaShoebox(FragTrap const &fragtrap);

@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 15:18:24 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/12 16:34:41 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/15 13:10:16 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,42 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name), _ninja_attack_ct(35), _
 /*
 ** Member functions
 */
+
+int		NinjaTrap::rangedAttack(std::string const & target)
+{
+	if (_energy_points < _ranged_attack_damage)
+	{
+		std::cout << COL_BLUE << "< NINJA-TP " << _name << " trying to attack " << target << ", but its energy is running out >" << std::endl;
+		std::cout << " -- Failed attempt -- " << std::endl;
+		std::cout << "| " << _name << " | Energy points: " << _energy_points << COL_END << std::endl;
+		return (0);
+	}
+	else
+	{
+		_energy_points -= _ranged_attack_damage;
+		std::cout << COL_BLUE << "< NINJA-TP " << _name << " attacks " << target << " at range, causing " << _ranged_attack_damage << " points of damage! >" << std::endl;
+		std::cout << "| " << _name << " | Energy points: " << _energy_points << COL_END << std::endl;
+		return (_ranged_attack_damage);
+	}
+}
+
+int		NinjaTrap::meleeAttack(std::string const & target)
+{
+	if (_energy_points < _melee_attack_damage)
+	{
+		std::cout << COL_BLUE << "< NINJA-TP " << _name << " trying to attack " << target << ", but its energy is running out >" << std::endl;
+		std::cout << " -- Failed attempt -- " << std::endl;
+		std::cout << "| " << _name << " | Energy points: " << _energy_points << COL_END << std::endl;
+		return (0);
+	}
+	else
+	{
+		_energy_points -= _melee_attack_damage;
+		std::cout << COL_BLUE << "< NINJA-TP " << _name << " attacks " << target << " in melee , causing " << _melee_attack_damage << " points of damage! >" << std::endl;
+		std::cout << "| " << _name << " | Energy points: " << _energy_points << COL_END << std::endl;
+		return (_melee_attack_damage);
+	}
+}
 
 int NinjaTrap::ninjaShoebox(ClapTrap const &claptrap)
 {

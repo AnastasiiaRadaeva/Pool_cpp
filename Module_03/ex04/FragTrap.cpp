@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:02:03 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/12 15:05:57 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/15 13:09:57 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,42 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 /*
 ** Member functions
 */
+
+int		FragTrap::rangedAttack(std::string const & target)
+{
+	if (_energy_points < _ranged_attack_damage)
+	{
+		std::cout << COL_PURPLE << "< FR4G-TP " << _name << " trying to attack " << target << ", but its energy is running out >" << std::endl;
+		std::cout << " -- Failed attempt -- " << std::endl;
+		std::cout << "| " << _name << " | Energy points: " << _energy_points << COL_END << std::endl;
+		return (0);
+	}
+	else
+	{
+		_energy_points -= _ranged_attack_damage;
+		std::cout << COL_PURPLE << "< FR4G-TP " << _name << " attacks " << target << " at range, causing " << _ranged_attack_damage << " points of damage! >" << std::endl;
+		std::cout << "| " << _name << " | Energy points: " << _energy_points << COL_END << std::endl;
+		return (_ranged_attack_damage);
+	}
+}
+
+int		FragTrap::meleeAttack(std::string const & target)
+{
+	if (_energy_points < _melee_attack_damage)
+	{
+		std::cout << COL_PURPLE << "< FR4G-TP " << _name << " trying to attack " << target << ", but its energy is running out >" << std::endl;
+		std::cout << " -- Failed attempt -- " << std::endl;
+		std::cout << "| " << _name << " | Energy points: " << _energy_points << COL_END << std::endl;
+		return (0);
+	}
+	else
+	{
+		_energy_points -= _melee_attack_damage;
+		std::cout << COL_PURPLE << "< FR4G-TP " << _name << " attacks " << target << " in melee , causing " << _melee_attack_damage << " points of damage! >" << std::endl;
+		std::cout << "| " << _name << " | Energy points: " << _energy_points << COL_END << std::endl;
+		return (_melee_attack_damage);
+	}
+}
 
 int		FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
