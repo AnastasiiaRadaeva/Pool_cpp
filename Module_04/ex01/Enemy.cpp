@@ -12,6 +12,10 @@
 
 #include "Enemy.hpp"
 
+Enemy::Enemy() : _hit_points(50), _type("Demon")
+{
+}
+
 Enemy::Enemy(int hp, std::string const &type) : _hit_points(hp), _type(type)
 {
 }
@@ -53,6 +57,6 @@ int                 Enemy::getHP(void) const
 
 void                Enemy::takeDamage(int damage)
 {
-    _hit_points = _hit_points - damage < 0 ? _hit_points : _hit_points - damage;
+    _hit_points = _hit_points - damage < 0 ? 0 : _hit_points - damage;
 }
         

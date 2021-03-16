@@ -33,7 +33,6 @@ class AWeapon
     protected:
 
         AWeapon();
-
         std::string _name;
         int         _apcost;
         int         _damage;

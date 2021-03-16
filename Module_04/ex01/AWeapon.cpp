@@ -12,6 +12,10 @@
 
 #include "AWeapon.hpp"
 
+AWeapon::AWeapon() : _name("Weapon"), _apcost(10), _damage(10)
+{    
+}
+
 AWeapon::AWeapon(std::string const & name, int apcost, int damage) : _name(name), _apcost(apcost), _damage(damage)
 {
 }

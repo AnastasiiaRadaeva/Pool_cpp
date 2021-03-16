@@ -15,6 +15,7 @@
 
 # include "AWeapon.hpp"
 # include "Enemy.hpp"
+# include <string>
 
 class Character
 {
@@ -29,6 +30,9 @@ class Character
         void                equip(AWeapon*);
         void                attack(Enemy*);
         std::string const   &getName() const;
+        int                 getAPNumber() const;
+        std::string const   &getWeaponName() const;
+        int                 getIfWeapon() const;
 
     protected:
 

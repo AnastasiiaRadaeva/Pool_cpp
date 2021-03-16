@@ -25,7 +25,6 @@ RadScorpion::RadScorpion(RadScorpion const &rad_scorpion)
     _type = rad_scorpion._type;
 }
 
-
 RadScorpion &RadScorpion::operator=(RadScorpion const &rad_scorpion)
 {
     _hit_points = rad_scorpion._hit_points;

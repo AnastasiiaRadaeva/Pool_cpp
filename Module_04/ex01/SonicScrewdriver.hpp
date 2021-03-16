@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   SonicScrewdriver.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 16:44:32 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/16 16:46:03 by kbatwoma         ###   ########.fr       */
+/*   Created: 2021/03/16 23:54:25 by kbatwoma          #+#    #+#             */
+/*   Updated: 2021/03/16 17:27:56 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-# define RADSCORPION_HPP
+#ifndef SONICSCREWDRIVER_HPP
+# define SONICSCREWDRIVER_HPP
 
-# include "Enemy.hpp"
+# include "AWeapon.hpp"
 
-class RadScorpion : public Enemy
+class SonicScrewdriver : public AWeapon
 {
-    public:
+     public:
 
-        RadScorpion();
-        RadScorpion(RadScorpion const &rad_scorpion);
-        RadScorpion &operator=(RadScorpion const &rad_scorpion);
-        ~RadScorpion();
+        SonicScrewdriver();
+        SonicScrewdriver(SonicScrewdriver const &sonic_screwdriver);
+        SonicScrewdriver &operator=(SonicScrewdriver const &sonic_screwdriver);
+        ~SonicScrewdriver();
+        
+        void        attack() const;
 };
 
 #endif

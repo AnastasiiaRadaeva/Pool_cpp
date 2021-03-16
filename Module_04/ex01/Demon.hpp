@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   Demon.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 16:44:32 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/16 16:46:03 by kbatwoma         ###   ########.fr       */
+/*   Created: 2021/03/16 23:41:46 by kbatwoma          #+#    #+#             */
+/*   Updated: 2021/03/16 23:56:28 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-# define RADSCORPION_HPP
+#ifndef DEMON_HPP
+# define DEMON_HPP
 
 # include "Enemy.hpp"
 
-class RadScorpion : public Enemy
+class Demon : public Enemy
 {
     public:
 
-        RadScorpion();
-        RadScorpion(RadScorpion const &rad_scorpion);
-        RadScorpion &operator=(RadScorpion const &rad_scorpion);
-        ~RadScorpion();
+        Demon();
+        Demon(Demon const &demon);
+        Demon &operator=(Demon const &demon);
+        ~Demon();
+
+        void    takeDamage(int);
 };
 
 #endif
