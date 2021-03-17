@@ -12,7 +12,7 @@
 
 #include "Demon.hpp"
 
-Demon::Demon() : Enemy(80, "Demon")
+Demon::Demon() : Enemy(100, "Demon")
 {
     std::cout << "I'll take you with me!" << std::endl;
 }
@@ -42,7 +42,7 @@ Demon::~Demon()
 ** Member functions
 */
 
-void    SuperMutant::takeDamage(int damage)
+void    Demon::takeDamage(int damage)
 {
     damage -= 2;
 

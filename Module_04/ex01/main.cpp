@@ -56,17 +56,72 @@ int main()
     AWeapon* pf = new PowerFist();
     AWeapon* ss = new SonicScrewdriver();
     
+    std::cout << std::endl << " --- Atack without weapon ---" << std::endl;
+    me->attack(scorpion);
+    me->attack(mutant);
+    me->attack(demon);
+
+    std::cout << std::endl << " --- Weapons --- " << std::endl;
     me->equip(pr);
     std::cout << *me;
     me->equip(pf);
-    
-    me->attack(b);
     std::cout << *me;
+    me->equip(ss);
+    std::cout << *me;
+
+    std::cout << std::endl << " --- Atack with weapon (all enemy) --- " << std::endl;
     me->equip(pr);
+    me->attack(scorpion);
+    std::cout << *me << std::endl;
+    
+    me->equip(pf);
     std::cout << *me;
-    me->attack(b);
+    me->attack(mutant);
+    std::cout << *me << std::endl;
+
+    me->equip(ss);
     std::cout << *me;
-    me->attack(b);
+    me->attack(demon);
     std::cout << *me;
+
+    std::cout << std::endl << " --- Enemy is dead --- " << std::endl;
+    me->equip(pr);
+    me->attack(scorpion);
+    me->attack(scorpion);
+    me->attack(scorpion);
+    std::cout << *me;
+
+    std::cout << std::endl << " --- Recover AP/Max --- " << std::endl;
+    
+    me->recoverAP();
+    std::cout << *me;
+    me->recoverAP();
+    std::cout << *me;
+    me->recoverAP();
+    std::cout << *me;
+    me->recoverAP();
+    std::cout << *me;
+
+    std::cout << std::endl << " --- Recover AP/Min --- " << std::endl;
+
+    me->equip(pf);
+    std::cout << *me;
+    me->attack(demon);
+    me->attack(demon);
+    me->attack(demon);
+    me->attack(demon);
+    std::cout << *me;
+    me->attack(demon);
+    std::cout << *me;
+    me->attack(demon);
+    std::cout << *me << std::endl;
+
+    delete demon;
+    delete mutant;
+    delete ss;
+    delete pf;
+    delete pr;
+    delete me;
+
     return 0;
 }
