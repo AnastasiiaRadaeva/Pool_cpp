@@ -30,7 +30,6 @@ int main()
         std::cerr << ex.what() << std::endl;
     }
     std::cout << std::endl;
-    
     try
     {
         Bureaucrat sally("Sally", 167);
@@ -76,7 +75,6 @@ int main()
         std::cerr << ex.what() << std::endl;
     }
     std::cout << std::endl;
-    
     try
     {
         simon.increment();
