@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:47:10 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/17 15:49:11 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/18 12:23:47 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Squad::Squad() : _number_of_units(0), _start_size_of_array(1)
 
 Squad::Squad(Squad const &squad)
 {
-    *this = squad;
     _number_of_units = squad._number_of_units;
     _start_size_of_array = squad._start_size_of_array;
     int number = _number_of_units > _start_size_of_array ? _number_of_units : _start_size_of_array;
@@ -51,15 +50,9 @@ Squad &Squad::operator=(Squad const &squad)
     while (++i < number)
     {
         _units[i] = NULL;
-        std::cout << "Here" << std::endl;
         if (squad._units[i])
-        {
-            std::cout << "Here_1" << std::endl;
             _units[i] = squad._units[i]->clone();
-            std::cout << "Here_2" << std::endl;
-        }
     }
-    std::cout << "Here_5" << std::endl;
     return (*this);
 }
 

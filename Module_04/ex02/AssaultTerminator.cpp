@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:47:10 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/17 15:49:11 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/18 12:22:19 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ AssaultTerminator::~AssaultTerminator()
 
 ISpaceMarine    *AssaultTerminator::clone(void) const
 {
-    AssaultTerminator *copy_marine = new AssaultTerminator;
-    *copy_marine = *this;
-    return (copy_marine);
+    return (new AssaultTerminator(*this));
 }
 
 void            AssaultTerminator::battleCry(void) const

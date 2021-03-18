@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:47:10 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/17 15:49:11 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/18 12:21:35 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,7 @@ TacticalMarine::~TacticalMarine()
 
 ISpaceMarine    *TacticalMarine::clone(void) const
 {
-    std::cout << "Marine" << std::endl;
-    // TacticalMarine *copy_marine = new TacticalMarine;
-    // *copy_marine = *this;
-    // return (copy_marine);
-    return new TacticalMarine(*this);
+    return (new TacticalMarine(*this));
 }
 
 void            TacticalMarine::battleCry(void) const
