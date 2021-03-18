@@ -12,35 +12,37 @@
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure"), _name("cure")
+Cure::Cure() : AMateria("cure")
 {
 }
 
-Cure::Cure(Cure const &cure)
+Cure::Cure(Cure const &cure) : AMateria(cure)
 {
-    *this = cure;
-
-    _name = cure._name;
 }
 
 Cure &Cure::operator=(Cure const &cure)
 {
-    _name = cure._name;
-
+    if (this != &cure)
+        AMateria::operator= (cure);
     return (*this);
+}
+
+Cure::~Cure()
+{
 }
 
 /*
 ** Member Functions
 */
 
-AMateria    *Cure::clone() const
+AMateria            *Cure::clone() const
 {
-    AMateria *cure = new Cure();
-    return (cure);
+    return (new Cure(*this));
 }
 
-void        Cure::power(ICharacter &target)
+void                Cure::use(ICharacter &target)
 {
-    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+    std::cout << "* heals ";
+    AMateria::use(target);
+    std::cout << "'s wounds *" << std::endl;
 }
