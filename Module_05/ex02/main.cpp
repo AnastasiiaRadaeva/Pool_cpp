@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 09:49:27 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/19 15:41:58 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/19 17:02:58 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int main()
 
     Bureaucrat nick("Nick", 57);
     std::cout << nick << std::endl;
-    std::cout << std::endl;
 
     Bureaucrat liz("Liz", 149);
     std::cout << liz << std::endl;
@@ -33,8 +32,7 @@ int main()
     std::cout << three << std::endl;
 
     RobotomyRequestForm robot("son");
-    std::cout << robot << std::endl;
-    std::cout << std::endl;    
+    std::cout << robot << std::endl;    
     
     PresidentialPardonForm pardon("you");
     std::cout << pardon << std::endl;
@@ -43,7 +41,6 @@ int main()
     std::cout << "--- Executing | form is not signed ---" << std::endl;
     nick.executeForm(three);
     mike.executeForm(robot);
-    liz.executeForm(pardon);
     std::cout << std::endl;
 
     std::cout << "--- Signing | with exeptions ---" << std::endl;
@@ -59,10 +56,28 @@ int main()
     std::cout << pardon << std::endl;
     std::cout << std::endl;
 
-    nick.signForm(pardon);
-    std::cout << pardon << std::endl;
+    nick.signForm(robot);
+    std::cout << robot << std::endl;
     std::cout << std::endl;
 
+    nick.signForm(three);
+    std::cout << three << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "--- Executing | form is signed | grade not enough ---" << std::endl;
+    liz.executeForm(three);
+    liz.executeForm(robot);
+    liz.executeForm(pardon);
+    std::cout << std::endl;
+
+    std::cout << "--- Executing | form is signed | grade not enough ---" << std::endl;
+    nick.executeForm(three);
+    std::cout << std::endl;
+    mike.executeForm(robot);
+    std::cout << std::endl;
+    mike.executeForm(pardon);
+    std::cout << std::endl;
+    
     return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 12:54:23 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/19 15:23:09 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/19 16:56:50 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &for
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &form)
 {
+    if (this != &form)
+        Form::operator= (form);
     return (*this);
 }
 

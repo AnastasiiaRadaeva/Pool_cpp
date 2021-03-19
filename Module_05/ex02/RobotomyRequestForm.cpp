@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 12:47:19 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/19 15:22:47 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/19 16:56:56 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &form) : Form
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &form)
 {
+    if (this != &form)
+        Form::operator= (form);
     return (*this);
 }
 

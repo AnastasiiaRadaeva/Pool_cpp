@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 12:29:59 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/19 15:21:35 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/19 16:57:04 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &form) 
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &form)
 {
+    if (this != &form)
+        Form::operator= (form);
     return (*this);
 }
 

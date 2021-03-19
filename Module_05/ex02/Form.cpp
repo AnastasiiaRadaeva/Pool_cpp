@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 09:49:07 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/19 15:22:40 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/19 16:58:11 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ const char  *Form::GradeTooLowException::what() const throw()
 
 const char  *Form::FormIsNotSigned::what() const throw()
 {
-    return ("* This fort is not signed yet. You cannot execute it *");
+    return ("* This form is not signed yet. You cannot execute it *");
 }
 
 /*
