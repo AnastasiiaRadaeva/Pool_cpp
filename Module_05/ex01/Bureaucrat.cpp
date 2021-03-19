@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/19 09:48:55 by kbatwoma          #+#    #+#             */
+/*   Updated: 2021/03/19 12:03:19 by kbatwoma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
@@ -71,6 +82,19 @@ void                Bureaucrat::decrement()
     if (_grade + 1 > 150)
         throw(Bureaucrat::GradeTooLowException());
     ++_grade;
+}
+
+void                Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << _name << " signs " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << _name << " cannot sign " << form.getName() << " because his grade too low for this form" << std::endl;
+    }        
 }
 
 /*
