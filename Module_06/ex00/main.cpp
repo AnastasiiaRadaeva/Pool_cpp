@@ -10,19 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstdlib>
-#include <iomanip>
+#include "Conversion.hpp"
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2 || !argv[1])
+    if (argc != 2 || argv[1][0] == 0)
     {
         std::cerr << "Error: check your arguments" << std::endl;
         return (0);
     }
-    double a = atof(argv[1]);
-    std::cout.precision(5); 
-    std::cout << a << std::endl;
+    Conversion conv(argv[1]);
+    conv.printChar();
+    conv.printInt();
+    conv.printFloat();
+    conv.printDouble();
 
+    return (0);
 }

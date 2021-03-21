@@ -15,7 +15,8 @@ CC 			= clang++
 FLAGS 		= -Wall -Wextra -Werror
 HEADER_DIR	= ./
 SRCS_DIR    = ./
-SRCS_LIST   = main.cpp
+SRCS_LIST   =	main.cpp \
+				Conversion.cpp
 SRCS		= $(addprefix $(SRCS_DIR), $(SRCS_LIST))
 OBJS		= $(patsubst %.cpp, %.o, $(SRCS))
 D_FILES		= $(patsubst %.cpp, %.d, $(SRCS))
