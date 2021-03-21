@@ -24,7 +24,7 @@ class Intern
 
     private:
 
-        Templates   *_templates;
+        Templates   **_templates;
         int const   _num_of_temp;
 };
 
