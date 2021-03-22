@@ -34,9 +34,7 @@ class Conversion
         float       _float;
         int         _int;
         char        _char;
-        int         _flag_in;
-        int         _flag_out;
-
+        int         _flag;
         void        parse(char *);
 
 };

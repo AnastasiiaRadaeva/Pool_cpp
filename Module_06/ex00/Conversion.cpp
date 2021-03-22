@@ -1,6 +1,6 @@
 #include "Conversion.hpp"
 
-Conversion::Conversion(char *value) : _str(value), _double(0), _float(0), _int(0), _char(0), _flag_in(0), _flag_out(0)
+Conversion::Conversion(char *value) : _str(value), _double(0), _float(0), _int(0), _char(0), _flag(0)
 {
     parse(value);
 }
@@ -11,6 +11,7 @@ Conversion::Conversion(Conversion const &value) : _str(value._str)
     _float = value._float;
     _int = value._int;
     _char = value._char;
+    _flag = value._flag;
 }
 
 Conversion  &Conversion::operator=(Conversion const &value)
@@ -22,6 +23,7 @@ Conversion  &Conversion::operator=(Conversion const &value)
         _float = value._float;
         _int = value._int;
         _char = value._char;
+        _flag = value._flag;
     }
     return (*this);
 }
@@ -46,30 +48,26 @@ void    Conversion::parse(char *value)
     else
     {
         std::stringstream ss(value);
-        if ((_str.find_first_of(".", 0) != std::string::npos && strlen(value) > 1) || _str.find("nan", 0) != std::string::npos || _str.find("inf", 1) != std::string::npos
-        || _str.find("nanf", 0) != std::string::npos || _str.find("inff", 1) != std::string::npos)
+        if ((_str.find_first_of(".", 0) != std::string::npos && strlen(value) > 1) || _str.find("nan", 0) != std::string::npos || _str.find("inf", 0) != std::string::npos)
         {
-            if (_str.find_last_of("f", 0) != std::string::npos)
+            if (_str.find_first_of("f", 0) != std::string::npos)
             {
                 ss >> _float;
-                if (ss.fail())
-                    _flag_in = 1;
+                if (_str.find("nan", 0) == std::string::npos && _str.find("inf", 0) == std::string::npos && ss.fail())
+                    _flag = 1;
             }
             else
             {
                 ss >> _double;
-                if (ss.fail())
-                    _flag_in = 1;
+                if (_str.find("nan", 0) == std::string::npos && _str.find("inf", 0) == std::string::npos && ss.fail())
+                {
+                    std::cout << "Fail" << std::endl;
+                    _flag = 1;
+                }
+                    
             }
             _double = atof(value);
-            ss >> _float;
-            if (ss.fail() && _str.find("nan", 0) == std::string::npos && _str.find("inf", 1) == std::string::npos
-            && _str.find("nanf", 0) == std::string::npos && _str.find("inff", 1) == std::string::npos)
-                _flag_out = 2;
             _float = static_cast<float>(_double);
-            ss >> _int;
-            if (ss.fail() && _flag_out != 2)
-                _flag_out = 3;
             _int = static_cast<int>(_double);
             _char = static_cast<char>(_int);
         }
@@ -77,7 +75,7 @@ void    Conversion::parse(char *value)
         {
             ss >> _int;
             if (ss.fail())
-                _flag_in = 1;
+                _flag = 1;
             else
             {
                 _int = atoi(value);
@@ -91,7 +89,7 @@ void    Conversion::parse(char *value)
 
 void    Conversion::printDouble(void)
 {
-    if (_flag_in == 1)
+    if (_flag == 1)
         std::cout << "impossible" << std::endl;
     else
     {
@@ -104,12 +102,15 @@ void    Conversion::printDouble(void)
 
 void    Conversion::printFloat(void)
 {
-    if (_flag_in == 1 || _flag_out == 2)
+    float a;
+    std::stringstream ss(_str);
+    ss >> a;
+    if ((_str.find("nan", 0) == std::string::npos && _str.find("inf", 0) == std::string::npos && ss.fail()) || _flag == 1)
         std::cout << "impossible" << std::endl;
     else
     {
         std::cout << _float;
-        if (!isnan(_float) && !isinf(_float) && (_float - static_cast<float>(_int)) == 0)
+        if (!std::isnan(_float) && !std::isinf(_float) && (_float - static_cast<float>(_int)) == 0)
             std::cout << ".0";
         std::cout << "f" << std::endl;
     }
@@ -117,7 +118,10 @@ void    Conversion::printFloat(void)
 
 void    Conversion::printInt(void)
 {
-    if (_flag_in == 1 || _flag_out == 2 || _flag_out == 3 || isnan(_double) || isinf(_double))
+    int a;
+    std::stringstream ss(_str);
+    ss >> a;
+    if (ss.fail() || _flag == 1 || std::isnan(_double) || std::isinf(_double))
         std::cout << "impossible" << std::endl;
     else
         std::cout << _int << std::endl;
@@ -125,22 +129,13 @@ void    Conversion::printInt(void)
 
 void    Conversion::printChar(void)
 {
-    if (_flag_in == 1 || _flag_out == 2 || _flag_out == 3 || isnan(_double) || isinf(_double))
+    int a;
+    std::stringstream ss(_str);
+    ss >> a;
+    if (ss.fail() || _flag == 1 || std::isnan(_double) || std::isinf(_double))
         std::cout << "impossible" << std::endl;
     else if (_int >= 32 && _int <= 126)
         std::cout << "'" << _char << "'" << std::endl;
     else
         std::cout << "Non displayable" << std::endl;
 }
-
-    // double double_ = atof(argv[1]);
-    // std::cout << std::fixed;
-    // std::cout << std::setprecision(5) << double_ << std::endl;
-    // std::cout.unsetf(std::ios::floatfield);
-    // float float_ = static_cast<float>(double_);
-    // std::cout << float_ << std::endl;
-    // int int_ = static_cast<int>(float_);
-    // std::cout << int_ << std::endl;
-    // char char_ = static_cast<char>(int_);
-    // std::cout << char_ << std::endl;
-    
