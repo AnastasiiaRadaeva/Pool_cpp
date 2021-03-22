@@ -46,7 +46,8 @@ void    Conversion::parse(char *value)
     else
     {
         std::stringstream ss(value);
-        if (_str.find_first_of(".", 0) != std::string::npos && strlen(value) > 1)
+        if ((_str.find_first_of(".", 0) != std::string::npos && strlen(value) > 1) || _str.find("nan", 0) != std::string::npos || _str.find("inf", 1) != std::string::npos
+        || _str.find("nanf", 0) != std::string::npos || _str.find("inff", 1) != std::string::npos)
         {
             if (_str.find_last_of("f", 0) != std::string::npos)
             {
@@ -62,7 +63,8 @@ void    Conversion::parse(char *value)
             }
             _double = atof(value);
             ss >> _float;
-            if (ss.fail())
+            if (ss.fail() && _str.find("nan", 0) == std::string::npos && _str.find("inf", 1) == std::string::npos
+            && _str.find("nanf", 0) == std::string::npos && _str.find("inff", 1) == std::string::npos)
                 _flag_out = 2;
             _float = static_cast<float>(_double);
             ss >> _int;
