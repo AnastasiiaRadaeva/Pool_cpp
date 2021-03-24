@@ -6,7 +6,7 @@
 /*   By: kbatwoma <kbatwoma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:59:35 by kbatwoma          #+#    #+#             */
-/*   Updated: 2021/03/24 12:32:21 by kbatwoma         ###   ########.fr       */
+/*   Updated: 2021/03/24 12:34:41 by kbatwoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,23 @@ T max(T &a, T &b)
     return (a > b ? a : b);
 }
 
-class Awesome
-{
-    public:
-        Awesome(int n) : _n(n){}
-        bool operator==(Awesome const &rhs) const {return (this->_n == rhs._n);}
-        bool operator!=(Awesome const &rhs) const {return (this->_n != rhs._n);}
-        bool operator>(Awesome const &rhs) const {return (this->_n > rhs._n);}
-        bool operator<(Awesome const &rhs) const {return (this->_n < rhs._n);}
-        bool operator>=(Awesome const &rhs) const {return (this->_n >= rhs._n);}
-        bool operator<=(Awesome const &rhs) const {return (this->_n <= rhs._n);}
+// class Awesome
+// {
+//     public:
+//         Awesome(int n) : _n(n){}
+//         bool operator==(Awesome const &rhs) const {return (this->_n == rhs._n);}
+//         bool operator!=(Awesome const &rhs) const {return (this->_n != rhs._n);}
+//         bool operator>(Awesome const &rhs) const {return (this->_n > rhs._n);}
+//         bool operator<(Awesome const &rhs) const {return (this->_n < rhs._n);}
+//         bool operator>=(Awesome const &rhs) const {return (this->_n >= rhs._n);}
+//         bool operator<=(Awesome const &rhs) const {return (this->_n <= rhs._n);}
 
-        int _n;
-};
+//         int _n;
+// };
 
-std::ostream &operator<<(std::ostream &out, Awesome const &a)
-{
-    return (out << a._n);
-}
+// std::ostream &operator<<(std::ostream &out, Awesome const &a)
+// {
+//     return (out << a._n);
+// }
 
 #endif
