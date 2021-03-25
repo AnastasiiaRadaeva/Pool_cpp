@@ -35,16 +35,20 @@ typename T::iterator easyfind(T &base, int first_occur)
 }
 
 template <typename key, typename value>
-typename std::map<int, int>::iterator easyfind(std::map<int, int> &map_, int first_occur)
+typename std::map<key, value>::iterator easyfind(std::map<key, value> &map_, int first_occur)
 {
-    return (map_.find(first_occur));
+    typename std::map<key, value>::iterator it;
+    if ((it = map_.find(first_occur)) != map_.end())
+        return (it);
     throw (OccurenceNotFound());
 }
 
 template <typename key, typename value>
-typename std::multimap<int, int>::iterator easyfind(std::multimap<int, int> &multimap_, int first_occur)
+typename std::multimap<key, value>::iterator easyfind(std::multimap<key, value> &multimap_, int first_occur)
 {
-    return (multimap_.find(first_occur));
+    typename std::multimap<key, value>::iterator it;
+    if ((it = multimap_.find(first_occur)) != multimap_.end())
+        return (it);
     throw (OccurenceNotFound());
 }
 

@@ -57,7 +57,6 @@ int main()
     {
         std::cerr << e.what() << std::endl;
     }
-    return (0);
     std::cout << std::endl;
 
     std::cout << "--- Map ---" << std::endl;
@@ -77,29 +76,28 @@ int main()
     {
         std::cerr << e.what() << std::endl;
     }
-    return (0);
     std::cout << std::endl;
 
-    // std::cout << "--- Multimap ---" << std::endl;
-    // std::multimap<int, int> multimap_1;
-    // typedef std::pair <int, int> int_pair;
-    // multimap_1.insert(int_pair(1, 1));
-    // multimap_1.insert(int_pair(2, 4));
-    // multimap_1.insert(int_pair(2, 7));
-    // std::multimap<int, int>::iterator it_multimap;
-    // it_multimap = easyfind(multimap_1, 2);
-    // std::cout << it_multimap->first << ", " << it_multimap->second << std::endl;
-    // try
-    // {
-    //     it_map = easyfind(multimap_1, 100);
-    // std::cout << it_multimap->first << ", " << it_multimap->second << std::endl;
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << e.what() << std::endl;
-    // }
-    // return (0);
-    // std::cout << std::endl;
+    std::cout << "--- Multimap ---" << std::endl;
+    std::multimap<int, int> multimap_1;
+    typedef std::pair <int, int> int_pair;
+    multimap_1.insert(int_pair(1, 1));
+    multimap_1.insert(int_pair(2, 4));
+    multimap_1.insert(int_pair(2, 7));
+    std::multimap<int, int>::iterator it_multimap;
+    it_multimap = easyfind(multimap_1, 2);
+    std::cout << it_multimap->first << ", " << it_multimap->second << std::endl;
+    try
+    {
+        it_map = easyfind(multimap_1, 100);
+    std::cout << it_multimap->first << ", " << it_multimap->second << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    return (0);
+    std::cout << std::endl;
 
     return (0);
 }
